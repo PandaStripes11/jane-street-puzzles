@@ -4,7 +4,7 @@ This repository contains my personal solutions to the **Jane Street Monthly Puzz
 
 ## 📁 Repository Structure
 
-The repository is organized by year and month folders i.e. july-2025
+The repository is organized by year and month folders i.e. /july-2025
 
 Each monthly folder typically includes:
 
@@ -14,6 +14,8 @@ Each monthly folder typically includes:
 - `README.md` – (Optional) Explanation of the approach and reasoning
 - `inputs.txt` – (If applicable) Puzzle-specific input data
 - `notes.md` – (Optional) Thought process, diagrams, or extra notes
+
+Run using Python obviously
 
 ## 🧠 About the Puzzles
 
