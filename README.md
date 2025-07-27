@@ -42,7 +42,7 @@ These are **my personal solutions**. While I strive for correctness, they may co
 
 ## 📬 Submissions
 
-If you're working on the same puzzles and would like to collaborate or compare strategies, feel free to open an issue or start a discussion. You can contact me at dontetruong@gmail.com. I'm an incoming CS major at Cornell.
+If you're working on the same puzzles and would like to collaborate or compare strategies, feel free to open an issue or start a discussion. You can contact me at dontetruong06@gmail.com. I'm an incoming CS major at Cornell.
 
 ---
 
