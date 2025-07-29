@@ -5,11 +5,16 @@ from mpl_toolkits.mplot3d import Axes3D
 
 data = np.zeros((100,100))
 
-def simulate_highway(density: float = 0.00000001, trip_length: float = 100000, road_length = 100000000, simulation_time: int = 1000):
-    expected_num_cars = int(density*road_length*simulation_time)
+def simulate_highway(density: float = 0.00000001, trip_length: float = 100000, road_length = 100000000, simulation_time: int = 1000, alpha: float = 1.3, lane="slow"):
+    if lane=="slow":
+        difference = alpha-1
+    else:
+        difference = 2-alpha
+
+    expected_num_cars = int(density*road_length*simulation_time*difference)
     spawn_time = np.random.uniform(0, simulation_time, expected_num_cars)
     spawn_location = np.random.uniform(0, road_length, expected_num_cars)
-    speeds = np.random.uniform(1, 2, expected_num_cars)
+    speeds = np.random.uniform(1 if lane=="slow" else alpha, alpha if lane =="slow" else 2, expected_num_cars)
 
     exit_time = spawn_time + trip_length / speeds
     exit_location = spawn_location + trip_length
@@ -55,7 +60,8 @@ def parse_events(events_array, size: int = 100):
 """
 
 simulation_time = eval(input("Enter a simulation time --> "))
-simulate_highway(simulation_time=simulation_time)
+simulate_highway(simulation_time=simulation_time, lane="slow")
+simulate_highway(simulation_time=simulation_time, lane="fast")
 
 # Get dimensions
 x_bins, y_bins = data.shape
@@ -83,7 +89,7 @@ ax.set_ylabel('Y (faster car speed)')
 ax.set_zlabel('Pass count')
 ax.set_title('3D Histogram from 2D Matrix')
 
-ax.view_init(elev=30, azim=160)
+ax.view_init(elev=30, azim=120)
 ax.set_xlim(ax.get_xlim()[::-1])
 ax.set_ylim(ax.get_ylim()[::-1])
 

@@ -49,10 +49,10 @@ def expected_cost_high_precision(a_val):
     fast_cost = double_integral(fast_cost_integrand, a, two, lambda x: x, lambda x: two, a)
     fast_weight = double_integral(weight_wrapped, a, two, lambda x: x, lambda x: two, a)
 
-    return (slow_cost + fast_cost) / (slow_weight + fast_weight)
+    return (slow_cost + fast_cost) #/ (slow_weight + fast_weight)
 
 # Brute-force minimization using high-precision steps
-def brute_force_minimize(start=1.111582608, stop=1.111582609, steps=100):
+def brute_force_minimize(start=1.1771414168, stop=1.1771414169, steps=100):
     min_a = None
     min_cost = mp.inf
     for i in range(steps + 1):

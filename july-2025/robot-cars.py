@@ -37,7 +37,7 @@ def expected_cost(a):
     fast_weight, _ = dblquad(lambda y, x: fast_lane_weight(x, y), a, 2, lambda x: x, lambda x: 2)
     denominator = slow_weight + fast_weight
 
-    return numerator / denominator
+    return numerator #/ denominator
 
 # Minimize the expected cost over a ∈ (1, 2)
 result = minimize_scalar(expected_cost, bounds=(1.111582, 1.111583), method='bounded', options={'xatol': 1e-10})
